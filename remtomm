@@ -1,0 +1,269 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void acertijo(const char* mensaje, int respuestaCorrecta) {
+    printf("%s\n", mensaje);
+    printf("Escribe tu respuesta: ");
+    
+    int respuesta;
+    scanf("%d", &respuesta);
+
+    if (respuesta == respuestaCorrecta) {
+        printf("¡Correcto!\n");
+    } else {
+        printf("Respuesta incorrecta. Fin del juego.\n");
+        exit(0);
+    }
+}
+
+void senderoBrillante() {
+    printf("Has elegido el sendero brillante...\n");
+    printf("Te encuentras con una fuente mágica que te ofrece tres opciones:\n");
+    printf("1. Beber de la fuente\n");
+    printf("2. Ignorar la fuente\n");
+    printf("3. Buscar un camino alternativo\n");
+
+    int eleccion;
+    scanf("%d", &eleccion);
+
+    if (eleccion == 1) {
+        printf("Has bebido de la fuente...\n");
+        printf("Te sientes revitalizado y encuentras una entrada secreta en el bosque.\n");
+        printf("Al entrar, encuentras un cofre con dos cerraduras. ¿Qué haces?\n");
+        printf("1. Tratas de abrir el cofre\n");
+        printf("2. Dejas el cofre y sigues explorando\n");
+
+        int eleccionCofre;
+        scanf("%d", &eleccionCofre);
+
+        if (eleccionCofre == 1) {
+            printf("Tratas de abrir el cofre...\n");
+            printf("Encuentras un acertijo en el cofre: ¿Qué palabra se convierte en más corta cuando se le añade una letra?\n");
+            acertijo("La respuesta es: Corta", 1);
+            printf("¡El cofre se abre y encuentras una llave dorada! Usas la llave para abrir una puerta secreta. ¡Ganaste el juego!\n");
+        } else if (eleccionCofre == 2) {
+            printf("Dejas el cofre y sigues explorando...\n");
+            printf("Te encuentras con un grupo de elfos que te ofrecen un mapa antiguo. ¿Aceptas el mapa o lo rechazas?\n");
+            printf("1. Aceptar el mapa\n");
+            printf("2. Rechazar el mapa\n");
+
+            int eleccionMapa;
+            scanf("%d", &eleccionMapa);
+
+            if (eleccionMapa == 1) {
+                printf("Aceptas el mapa...\n");
+                printf("El mapa te lleva a una entrada secreta en el bosque donde encuentras un tesoro escondido. ¡Ganaste el juego!\n");
+            } else if (eleccionMapa == 2) {
+                printf("Rechazas el mapa...\n");
+                printf("Te pierdes en el bosque y no puedes encontrar la salida. Fin del juego.\n");
+            } else {
+                printf("Opción inválida. Fin del juego.\n");
+            }
+        } else {
+            printf("Opción inválida. Fin del juego.\n");
+        }
+    } else if (eleccion == 2) {
+        printf("Ignoras la fuente...\n");
+        printf("Continúas tu camino y llegas a una cueva misteriosa con dos salidas:\n");
+        printf("1. La salida de la izquierda\n");
+        printf("2. La salida de la derecha\n");
+
+        int eleccionSalida;
+        scanf("%d", &eleccionSalida);
+
+        if (eleccionSalida == 1) {
+            printf("Elegiste la salida de la izquierda...\n");
+            printf("Encuentras una sala llena de gemas. Tienes dos opciones:\n");
+            printf("1. Recoger las gemas\n");
+            printf("2. Salir de la sala\n");
+
+            int eleccionGemas;
+            scanf("%d", &eleccionGemas);
+
+            if (eleccionGemas == 1) {
+                printf("Recoges las gemas...\n");
+                printf("De repente, una trampa se activa y eres atrapado en un campo de fuerza. Fin del juego.\n");
+            } else if (eleccionGemas == 2) {
+                printf("Sales de la sala...\n");
+                printf("Encuentras una entrada secreta a un reino oculto. ¡Ganaste el juego!\n");
+            } else {
+                printf("Opción inválida. Fin del juego.\n");
+            }
+        } else if (eleccionSalida == 2) {
+            printf("Elegiste la salida de la derecha...\n");
+            printf("Encuentras un antiguo libro en una estantería. ¿Qué haces?\n");
+            printf("1. Lees el libro\n");
+            printf("2. Dejas el libro y sigues explorando\n");
+
+            int eleccionLibro;
+            scanf("%d", &eleccionLibro);
+
+            if (eleccionLibro == 1) {
+                printf("Lees el libro...\n");
+                printf("El libro contiene un hechizo para abrir un portal a otro mundo. ¡Ganaste el juego!\n");
+            } else if (eleccionLibro == 2) {
+                printf("Dejas el libro...\n");
+                printf("Te pierdes en la cueva y no encuentras la salida. Fin del juego.\n");
+            } else {
+                printf("Opción inválida. Fin del juego.\n");
+            }
+        } else {
+            printf("Opción inválida. Fin del juego.\n");
+        }
+    } else if (eleccion == 3) {
+        printf("Buscas un camino alternativo...\n");
+        printf("Encuentras un viejo sabio que te ofrece un acertijo adicional:\n");
+        acertijo("El sabio te pregunta: ¿Qué número es divisible por 3 y 5 y menor que 30?", 15);
+        printf("¡El sabio te concede un deseo! Usas el deseo para encontrar una salida segura. ¡Ganaste el juego!\n");
+    } else {
+        printf("Opción inválida. Fin del juego.\n");
+    }
+}
+
+void senderoOscuro() {
+    printf("Has elegido el sendero oscuro...\n");
+    printf("Llegas a un cruce con tres caminos:\n");
+    printf("1. El camino a la izquierda\n");
+    printf("2. El camino al centro\n");
+    printf("3. El camino a la derecha\n");
+
+    int eleccion;
+    scanf("%d", &eleccion);
+
+    if (eleccion == 1) {
+        printf("Elegiste el camino a la izquierda...\n");
+        printf("Encuentras un castillo en ruinas con dos habitaciones:\n");
+        printf("1. La habitación dorada\n");
+        printf("2. La habitación oscura\n");
+
+        int eleccionHabitacion;
+        scanf("%d", &eleccionHabitacion);
+
+        if (eleccionHabitacion == 1) {
+            printf("Entras en la habitación dorada...\n");
+            printf("Encuentras una corona mágica que te da el poder de gobernar el reino. ¡Ganaste el juego!\n");
+        } else if (eleccionHabitacion == 2) {
+            printf("Entras en la habitación oscura...\n");
+            printf("La habitación está llena de trampas y monstruos. No puedes escapar. Fin del juego.\n");
+        } else {
+            printf("Opción inválida. Fin del juego.\n");
+        }
+    } else if (eleccion == 2) {
+        printf("Elegiste el camino al centro...\n");
+        printf("Encuentras una sala con tres puertas:\n");
+        printf("1. La puerta de la izquierda\n");
+        printf("2. La puerta del centro\n");
+        printf("3. La puerta de la derecha\n");
+
+        int eleccionPuerta;
+        scanf("%d", &eleccionPuerta);
+
+        if (eleccionPuerta == 1) {
+            printf("Abres la puerta de la izquierda...\n");
+            printf("Encuentras un dragón que te ofrece un trato. ¿Aceptas el trato o luchas contra él?\n");
+            printf("1. Aceptar el trato\n");
+            printf("2. Luchar contra el dragón\n");
+
+            int eleccionDragón;
+            scanf("%d", &eleccionDragón);
+
+            if (eleccionDragón == 1) {
+                printf("Aceptas el trato...\n");
+                printf("El dragón te da una espada mágica que te ayuda a salir del laberinto. ¡Ganaste el juego!\n");
+            } else if (eleccionDragón == 2) {
+                printf("Luchas contra el dragón...\n");
+                printf("El dragón es demasiado poderoso y te derrota. Fin del juego.\n");
+            } else {
+                printf("Opción inválida. Fin del juego.\n");
+            }
+        } else if (eleccionPuerta == 2) {
+            printf("Abres la puerta del centro...\n");
+            printf("Encuentras un altar antiguo con una gema mágica. ¿Qué haces?\n");
+            printf("1. Tomar la gema\n");
+            printf("2. Dejar la gema y salir\n");
+
+            int eleccionGema;
+            scanf("%d", &eleccionGema);
+
+            if (eleccionGema == 1) {
+                printf("Tomar la gema...\n");
+                printf("La gema está maldita y te atrapa en el altar. Fin del juego.\n");
+            } else if (eleccionGema == 2) {
+                printf("Dejas la gema...\n");
+                printf("Encuentras una salida secreta del laberinto. ¡Ganaste el juego!\n");
+            } else {
+                printf("Opción inválida. Fin del juego.\n");
+            }
+        } else if (eleccionPuerta == 3) {
+            printf("Abres la puerta de la derecha...\n");
+            printf("Encuentras un libro antiguo en un pedestal. ¿Qué haces?\n");
+            printf("1. Leer el libro\n");
+            printf("2. Ignorar el libro\n");
+
+            int eleccionLibro;
+            scanf("%d", &eleccionLibro);
+
+            if (eleccionLibro == 1) {
+                printf("Lees el libro...\n");
+                printf("El libro contiene un hechizo para escapar del laberinto. ¡Ganaste el juego!\n");
+            } else if (eleccionLibro == 2) {
+                printf("Ignoras el libro...\n");
+                printf("El laberinto se reconfigura y no puedes encontrar la salida. Fin del juego.\n");
+            } else {
+                printf("Opción inválida. Fin del juego.\n");
+            }
+        } else {
+            printf("Opción inválida. Fin del juego.\n");
+        }
+    } else if (eleccion == 3) {
+        printf("Elegiste el camino a la derecha...\n");
+        printf("Encuentras un portal mágico. ¿Qué haces?\n");
+        printf("1. Entrar al portal\n");
+        printf("2. Ignorar el portal y seguir explorando\n");
+
+        int eleccionPortal;
+        scanf("%d", &eleccionPortal);
+
+        if (eleccionPortal == 1) {
+            printf("Entro al portal...\n");
+            printf("El portal te lleva a un mundo fantástico lleno de maravillas. ¡Ganaste el juego!\n");
+        } else if (eleccionPortal == 2) {
+            printf("Ignoras el portal...\n");
+            printf("Te pierdes en el sendero y no encuentras la salida. Fin del juego.\n");
+        } else {
+            printf("Opción inválida. Fin del juego.\n");
+        }
+    } else {
+        printf("Opción inválida. Fin del juego.\n");
+    }
+}
+
+void inicioJuego() {
+    printf("¡Bienvenido al mundo mágico de Potaxie!\n");
+    printf("Te encuentras en la entrada del bosque encantado.\n");
+    printf("Primero, debes resolver un acertijo para poder avanzar.\n");
+    acertijo("¿Cuál es el número que, cuando se multiplica por 7 y se le resta 5, da 30?", 5);
+
+    printf("Ahora tienes dos caminos frente a ti:\n");
+    printf("1. El sendero brillante\n");
+    printf("2. El sendero oscuro\n");
+    printf("Escribe el número de tu elección: ");
+    
+    int eleccion;
+    scanf("%d", &eleccion);
+
+    if (eleccion == 1) {
+        senderoBrillante();
+    } else if (eleccion == 2) {
+        senderoOscuro();
+    } else {
+        printf("Opción inválida. Fin del juego.\n");
+    }
+}
+
+int main() {
+    srand(time(NULL));
+    inicioJuego();
+    return 0;
+}
